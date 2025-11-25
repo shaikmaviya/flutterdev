@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Flutter Developer Portfolio - Android & iOS App Development">
+    <meta name="keywords" content="Flutter Developer, Android, iOS, Mobile App Development">
+    <title>Flutter Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fab fa-flutter"></i>
+                    <span>Maviya Shaik</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content" aria-label="Introduction section">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Flutter Developer</span>
+                        <br><span class="subtitle">Building Beautiful Apps</span>
+                    </h1>
+                    <p class="hero-description">
+                        Crafting fast, scalable, cross‑platform applications with Flutter across mobile, desktop and web. Turning ideas into polished, performant experiences.
+                    </p>
+                    <div class="hero-buttons" aria-label="Primary actions">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                    <div class="social-links" aria-label="Social links">
+                        <a href="https://github.com/shaikmaviya" target="_blank" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/maviya-shaik" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/ameer.muaviya.shaik/" target="_blank" aria-label="Instagram (Ameer Muaviya Shaik)"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="mailto:maviyashaik.dev@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="platform-cards" aria-label="Supported platforms">
+                    <div class="floating-card android" tabindex="0" aria-label="Android platform">
+                        <i class="fab fa-android" aria-hidden="true"></i>
+                        <p>Android</p>
+                    </div>
+                    <div class="floating-card ios" tabindex="0" aria-label="iOS platform">
+                        <i class="fab fa-apple" aria-hidden="true"></i>
+                        <p>iOS</p>
+                    </div>
+                    <div class="floating-card flutter" tabindex="0" aria-label="Flutter framework">
+                        <picture>
+                            <source srcset="assets/images/flutter.png" type="image/png">
+                            <img src="assets/images/flutter.png" alt="Flutter Logo" class="platform-logo" loading="lazy" width="64" height="64">
+                        </picture>
+                        <p>Flutter</p>
+                    </div>
+                    <div class="floating-card windows" tabindex="0" aria-label="Windows platform">
+                        <i class="fab fa-windows" aria-hidden="true"></i>
+                        <p>Windows</p>
+                    </div>
+                    <div class="floating-card linux" tabindex="0" aria-label="Linux platform">
+                        <i class="fab fa-linux" aria-hidden="true"></i>
+                        <p>Linux</p>
+                    </div>
+                    <div class="floating-card web" tabindex="0" aria-label="Web platform">
+                        <i class="fas fa-globe" aria-hidden="true"></i>
+                        <p>Web</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SVG Gradient Definitions for Circular Progress -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <!-- Add your profile video here -->
+                    <video id="profileVideo" class="profile-video" autoplay muted loop playsinline poster="assets/images/image.png">
+                        <source src="assets/videos/video.mp4" type="video/mp4">
+                        <source src="assets/videos/profile.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                    <!-- Fallback image shown if video fails -->
+                    <img id="profileFallback" src="assets/images/image.png" alt="Maviya Shaik - Flutter Developer" class="profile-pic" style="display:none;" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h3>Professional Flutter Developer</h3>
+                    <p>
+                        I'm a passionate mobile app developer specializing in Flutter framework.
+                        With expertise in creating cross-platform applications that run seamlessly
+                        on both Android and iOS devices, I deliver high-quality, performant, and
+                        beautiful mobile experiences.
+                    </p>
+                    <p>
+                        My approach combines clean code architecture, modern UI/UX design principles,
+                        and efficient state management to build apps that users love. I stay updated
+                        with the latest Flutter updates and best practices to ensure optimal app performance.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>6+</h4>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h4>1+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h4>100%</h4>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="tech-skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">A comprehensive overview of my technical expertise and proficiencies</p>
+
+            <!-- Core Skills with Progress Circles -->
+            <div class="core-skills">
+                <h3 class="subsection-title">Core Technologies</h3>
+                <div class="skills-circular">
+                    <div class="circular-skill">
+                        <div class="circle-progress" data-percentage="95">
+                            <svg width="140" height="140">
+                                <circle class="circle-bg" cx="70" cy="70" r="60"></circle>
+                                <circle class="circle-fill" cx="70" cy="70" r="60" style="--percentage: 95;"></circle>
+                            </svg>
+                            <div class="circle-content">
+                                <i class="fab fa-flutter"></i>
+                                <span class="percentage">95%</span>
+                            </div>
+                        </div>
+                        <h4>Flutter</h4>
+                        <p>Cross-platform framework</p>
+                    </div>
+
+                    <div class="circular-skill">
+                        <div class="circle-progress" data-percentage="90">
+                            <svg width="140" height="140">
+                                <circle class="circle-bg" cx="70" cy="70" r="60"></circle>
+                                <circle class="circle-fill" cx="70" cy="70" r="60" style="--percentage: 90;"></circle>
+                            </svg>
+                            <div class="circle-content">
+                                <i class="fas fa-code"></i>
+                                <span class="percentage">90%</span>
+                            </div>
+                        </div>
+                        <h4>Dart</h4>
+                        <p>Programming language</p>
+                    </div>
+
+                    <div class="circular-skill">
+                        <div class="circle-progress" data-percentage="88">
+                            <svg width="140" height="140">
+                                <circle class="circle-bg" cx="70" cy="70" r="60"></circle>
+                                <circle class="circle-fill" cx="70" cy="70" r="60" style="--percentage: 88;"></circle>
+                            </svg>
+                            <div class="circle-content">
+                                <i class="fas fa-paint-brush"></i>
+                                <span class="percentage">88%</span>
+                            </div>
+                        </div>
+                        <h4>UI/UX Design</h4>
+                        <p>User interface design</p>
+                    </div>
+
+                    <div class="circular-skill">
+                        <div class="circle-progress" data-percentage="85">
+                            <svg width="140" height="140">
+                                <circle class="circle-bg" cx="70" cy="70" r="60"></circle>
+                                <circle class="circle-fill" cx="70" cy="70" r="60" style="--percentage: 85;"></circle>
+                            </svg>
+                            <div class="circle-content">
+                                <i class="fas fa-fire"></i>
+                                <span class="percentage">85%</span>
+                            </div>
+                        </div>
+                        <h4>Firebase</h4>
+                        <p>Backend services</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Categories Grid -->
+            <div class="skill-categories">
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Development</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Android Development</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 92%;"></div>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">iOS Development</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 88%;"></div>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Platform Channels</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 80%;"></div>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Native APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 78%;"></div>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>State Management</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Provider</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 90%;"></div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">BLoC Pattern</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 92%;"></div>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Riverpod</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 85%;"></div>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GetX</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 88%;"></div>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Database & Storage</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">SQLite</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 87%;"></div>
+                                <span class="skill-percent">87%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Hive</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 90%;"></div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Firestore</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 85%;"></div>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Shared Preferences</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 95%;"></div>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>API & Integration</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">REST API</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 93%;"></div>
+                                <span class="skill-percent">93%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GraphQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 82%;"></div>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">WebSocket</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 78%;"></div>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Third-party APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 90%;"></div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Development Tools</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">VS Code</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 95%;"></div>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Git & GitHub</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 90%;"></div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Figma</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 85%;"></div>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CI/CD</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 80%;"></div>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>Advanced Concepts</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Clean Architecture</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 88%;"></div>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SOLID Principles</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 85%;"></div>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Design Patterns</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 83%;"></div>
+                                <span class="skill-percent">83%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Performance Optimization</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--width: 87%;"></div>
+                                <span class="skill-percent">87%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack Badges -->
+            <div class="tech-stack">
+                <h3 class="subsection-title">Technology Stack</h3>
+                <div class="tech-badges">
+
+                    <div class="tech-badge">
+                        <i class="fas fa-code"></i>
+                        <span>Dart</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fab fa-android"></i>
+                        <span>Android</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fab fa-apple"></i>
+                        <span>iOS</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-fire"></i>
+                        <span>Firebase</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fab fa-figma"></i>
+                        <span>Figma</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-database"></i>
+                        <span>SQLite</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-box"></i>
+                        <span>Hive</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-plug"></i>
+                        <span>REST API</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>GraphQL</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-cube"></i>
+                        <span>Provider</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-cubes"></i>
+                        <span>BLoC</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>GetX</span>
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-boxes"></i>
+                        <span>Riverpod</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            <!-- Old Skills Grid (Hidden by default) -->
+            <div class="skills-grid" style="display: none;">
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fab fa-flutter"></i>
+                    </div>
+                    <h3>Flutter & Dart</h3>
+                    <p>Expert in Flutter framework and Dart programming language for cross-platform development</p>
+                    <div class="skill-tags">
+                        <span class="tag">Flutter 3.x</span>
+                        <span class="tag">Dart</span>
+                        <span class="tag">Material Design</span>
+                        <span class="tag">Cupertino</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Platforms</h3>
+                    <p>Native Android & iOS development knowledge with platform-specific integrations</p>
+                    <div class="skill-tags">
+                        <span class="tag">Android</span>
+                        <span class="tag">iOS</span>
+                        <span class="tag">Platform Channels</span>
+                        <span class="tag">Native APIs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>State Management</h3>
+                    <p>Proficient in various state management solutions for scalable app architecture</p>
+                    <div class="skill-tags">
+                        <span class="tag">Provider</span>
+                        <span class="tag">BLoC</span>
+                        <span class="tag">Riverpod</span>
+                        <span class="tag">GetX</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Backend & APIs</h3>
+                    <p>Experience with REST APIs, Firebase, and backend integration</p>
+                    <div class="skill-tags">
+                        <span class="tag">Firebase</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">GraphQL</span>
+                        <span class="tag">Supabase</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Version Control</h3>
+                    <p>Strong Git workflow and collaboration using modern development tools</p>
+                    <div class="skill-tags">
+                        <span class="tag">Git</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">GitLab</span>
+                        <span class="tag">CI/CD</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating beautiful, responsive, and user-friendly interfaces</p>
+                    <div class="skill-tags">
+                        <span class="tag">Figma</span>
+                        <span class="tag">Adobe XD</span>
+                        <span class="tag">Responsive Design</span>
+                        <span class="tag">Animations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Ishq Reply - Main Featured App -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-music"></i>
+                            <span class="app-mockup">Entertainment</span>
+                        </div>
+                        <!-- <img src="assets/images/music-player.png" alt="Music Player App"> -->
+                    </div>
+                    <div class="project-info">
+                        <h3>Music Player</h3>
+                        <p>Beautiful music streaming app with custom animations, smart playlists, equalizer, and offline mode for
+                            uninterrupted listening.</p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Audio Players</span>
+                            <span class="tag">Animations</span>
+                            <span class="tag">Hive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/shaikmaviya/Tune.git" class="project-link"><i class="fab fa-github"></i>
+                                Code</a>
+                            <a href="tune.html" class="project-link"><i class="fas fa-external-link-alt"></i> View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-heart"></i>
+                            <span class="app-mockup">Featured App</span>
+                        </div>
+                        <!-- To add actual image, replace the div above with: -->
+                        <!-- <img src="assets/images/ishq-reply.png" alt="Ishq Reply App"> -->
+                    </div>
+                    <div class="project-info">
+                        <h3>💌 Ishq Reply</h3>
+                        <p>AI-powered messaging assistant that generates perfect romantic and engaging replies for your conversations. Never run out of words with smart, context-aware responses.</p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">AI/ML</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="assets/apk/ishq-reply.apk" class="project-link" download><i class="fab fa-google-play"></i> Download APK</a>
+                            <a href="ishq-reply.html" class="project-link"><i class="fas fa-external-link-alt"></i> View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="app-mockup">E-Commerce</span>
+                        </div>
+                        <!-- <img src="assets/images/ecommerce-app.png" alt="E-Commerce App"> -->
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce App</h3>
+                        <p>Full-featured shopping app with product catalog, cart management, secure payment integration, and real-time order tracking.</p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Payment Gateway</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-heartbeat"></i>
+                            <span class="app-mockup">Health & Fitness</span>
+                        </div>
+                        <!-- <img src="assets/images/fitness-tracker.png" alt="Fitness Tracker App"> -->
+                    </div>
+                    <div class="project-info">
+                        <h3>Fitness Tracker</h3>
+                        <p>Comprehensive health and fitness app with workout tracking, calorie counter, meal planning, and detailed progress analytics.</p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Provider</span>
+                            <span class="tag">Charts</span>
+                            <span class="tag">SQLite</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-comments"></i>
+                            <span class="app-mockup">Social & Chat</span>
+                        </div>
+                        <!-- <img src="assets/images/chat-app.png" alt="Chat Application"> -->
+                    </div>
+                    <div class="project-info">
+                        <h3>Chat Application</h3>
+                        <p>Secure real-time messaging app with end-to-end encryption, media sharing, voice messages, and group chat functionality.</p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Real-time DB</span>
+                            <span class="tag">WebSockets</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-utensils"></i>
+                            <span class="app-mockup">Food Delivery</span>
+                        </div>
+                        <!-- <img src="assets/images/food-delivery.png" alt="Food Delivery App"> -->
+                    </div>
+                    <div class="project-info">
+                        <h3>Food Delivery App</h3>
+                        <p>Restaurant discovery and food ordering platform with live tracking, ratings, reviews, and seamless checkout experience.</p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Google Maps</span>
+                            <span class="tag">BLoC</span>
+                            <span class="tag">Geolocation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>
+                        I'm always interested in hearing about new projects and opportunities. 
+                        Whether you have a question or just want to say hi, feel free to reach out!
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>maviyashaik.dev@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 7780113910</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Nagavara, Bengaluru, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="user_name">Full Name</label>
+                        <input type="text" id="user_name" name="user_name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email">Email Address</label>
+                        <input type="email" id="user_email" name="user_email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                    </button>
+                    <div class="form-status" id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fab fa-flutter"></i>
+                    <span>Maviya Shaik</span>
+                </div>
+                <p>&copy; 2025 Maviya Shaik - Flutter Developer Portfolio. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/shaikmaviya" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/maviya-shaik" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/ameer.muaviya.shaik/" target="_blank" aria-label="Instagram (Ameer Muaviya Shaik)"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:maviyashaik.dev@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    (function(){
+        var video = document.getElementById('profileVideo');
+        var fallback = document.getElementById('profileFallback');
+        if(!video || !fallback) return;
+        function showFallback(){
+            if(video) video.style.display='none';
+            if(fallback) fallback.style.display='block';
+        }
+        // Attach error listeners to each source
+        Array.prototype.forEach.call(video.querySelectorAll('source'), function(src){
+            src.addEventListener('error', showFallback);
+        });
+        video.addEventListener('error', showFallback);
+        // Attempt playback (needed for some browsers); fallback if it fails
+        var playPromise = video.play();
+        if(playPromise && typeof playPromise.catch === 'function'){
+            playPromise.catch(showFallback);
+        }
+        // If metadata doesn't load within 5 seconds, fallback
+        var timeout = setTimeout(function(){
+            if(video.readyState < 1){ // HAVE_METADATA
+                showFallback();
+            }
+        }, 5000);
+        video.addEventListener('loadeddata', function(){ clearTimeout(timeout); });
+    })();
+    </script>
+</body>
+</html>

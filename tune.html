@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tune - Modern music streaming app">
+    <title>Tune - Project Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .back-button-fixed {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--primary-color);
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            z-index: 1200;
+            transition: var(--transition);
+        }
+        .back-button-fixed i { font-size: 1rem; }
+        .back-button-fixed:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+        }
+        @media (max-width: 480px) {
+            .back-button-fixed { top: 12px; left: 12px; padding: 6px 14px; font-size: 0.8rem; }
+            .back-button-fixed i { font-size: 0.85rem; }
+        }
+        .project-detail-hero {
+            background: var(--gradient);
+            padding: 60px 0 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .project-detail-hero h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .project-detail-hero .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.92;
+            max-width: 640px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .project-detail-hero .tags {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-detail-hero .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.45rem 1.2rem;
+            border-radius: 22px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-overview {
+            padding: 45px 0;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .overview-content h2 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .overview-content p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+
+        .overview-stats {
+            background: var(--light-card);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-item h4 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-item p {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .features-section {
+            background: var(--light-bg);
+            padding: 45px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.85rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--light-card);
+            padding: 0.7rem 0.75rem; /* compact */
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: white;
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.45rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.35;
+            font-size: 0.85rem;
+            margin: 0 0 0.25rem;
+        }
+
+        .screenshots-section {
+            padding: 45px 0;
+            overflow-x: hidden;
+        }
+
+        .screenshots-grid {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 1rem 2rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--light-bg);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .screenshots-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .screenshots-grid::-webkit-scrollbar-track {
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+
+        .screenshots-grid::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .screenshot-item {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            background: var(--light-card);
+            flex-shrink: 0;
+            width: 280px;
+            height: 550px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .screenshot-placeholder {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .screenshot-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .screenshot-placeholder p {
+            font-size: 0.9rem;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            width: 590px;
+            height: 1280px;
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            animation: zoomIn 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 10000;
+        }
+
+        .modal-close:hover {
+            color: #bbb;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { 
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to { 
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .tech-stack-section {
+            background: var(--light-bg);
+            padding: 45px 0;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-item {
+            background: var(--light-card);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tech-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tech-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .download-section {
+            background: var(--gradient);
+            padding: 45px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .download-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .download-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-detail-hero {
+                padding: 50px 0 35px;
+            }
+
+            .project-detail-hero h1 {
+                font-size: 2rem;
+            }
+
+            .project-detail-hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .project-detail-hero .tag {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .overview-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-stack-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+
+            .screenshots-grid {
+                gap: 1rem;
+            }
+
+            .screenshot-item {
+                width: 240px;
+                height: 425px;
+            }
+
+            .download-section h2 {
+                font-size: 2rem;
+            }
+
+            .download-section p {
+                font-size: 1rem;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .download-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-detail-hero {
+                padding: 40px 0 30px;
+            }
+
+            .project-detail-hero h1 {
+                font-size: 1.65rem;
+            }
+
+            .project-detail-hero .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .project-detail-hero .tags {
+                gap: 0.5rem;
+            }
+
+            .project-detail-hero .tag {
+                padding: 0.35rem 0.9rem;
+                font-size: 0.75rem;
+            }
+
+            .project-overview,
+            .features-section,
+            .screenshots-section,
+            .tech-stack-section,
+            .download-section {
+                padding: 30px 0;
+            }
+
+            .overview-content h2,
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .overview-content p {
+                font-size: 0.95rem;
+            }
+
+            .overview-stats {
+                padding: 1.5rem;
+            }
+
+            .stat-item {
+                padding: 1rem 0;
+            }
+
+            .stat-item h4 {
+                font-size: 0.8rem;
+            }
+
+            .stat-item p {
+                font-size: 1.1rem;
+            }
+
+            .feature-card {
+                padding: 1.2rem;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+
+            .tech-stack-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .tech-item {
+                padding: 0.9rem;
+            }
+
+            .tech-item i {
+                font-size: 2rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .tech-item h4 {
+                font-size: 0.95rem;
+            }
+
+            .screenshots-grid {
+                gap: 0.75rem;
+            }
+
+            .screenshot-item {
+                width: 200px;
+                height: 355px;
+            }
+
+            .download-section h2 {
+                font-size: 1.65rem;
+            }
+
+            .download-section p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .download-btn {
+                padding: 0.85rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button (Replaces Navigation) -->
+    <a href="index.html#projects" class="back-button-fixed" aria-label="Back to Projects">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back</span>
+    </a>
+
+    <!-- Project Hero -->
+    <section class="project-detail-hero">
+        <div class="container">
+            <h1>🎵 Tune</h1>
+            <p class="subtitle">Modern music streaming app with personalized playlists, offline playback, and seamless integration with your favorite music services. Discover, play, and enjoy music like never before.</p>
+            <div class="tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Audio Streaming</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">REST API</span>
+                <span class="tag">Dart</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="screenshots-section">
+        <div class="container" style="max-width: 100%; padding: 0 2rem;">
+            <h2 class="section-title">App Screenshots</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 1rem;">
+                Preview of the app interface and features
+            </p>
+            <div class="screenshots-grid" id="screenshotsCarousel">
+                <div class="screenshot-item" onclick="openModal('assets/images/tune-1.jpg')">
+                    <img src="assets/images/tune/tune-1.jpg" alt="Tune Welcome Screen">
+                </div>
+                <div class="screenshot-item" onclick="openModal('assets/images/tune-2.jpg')">
+                    <img src="assets/images/tune//tune-2.jpg" alt="Tune Category Selection">
+                </div>
+                <div class="screenshot-item" onclick="openModal('assets/images/tune-3.jpg')">
+                    <img src="assets/images/tune/tune-3.jpg" alt="Tune Profile">
+                </div>
+                <div class="screenshot-item" onclick="openModal('assets/images/tune-4.jpg')">
+                    <img src="assets/images/tune/tune-4.jpg" alt="Tune Music List">
+                </div>
+                <div class="screenshot-item" onclick="openModal('assets/images/tune-5.jpg')">
+                    <img src="assets/images/tune/tune-5.jpg" alt="Tune Music Player">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Unlimited Streaming</h3>
+                    <p>Access millions of songs with high-quality audio streaming and instant playback.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Offline Mode</h3>
+                    <p>Download your favorite tracks and playlists to enjoy music without internet connection.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-list-ul"></i>
+                    </div>
+                    <h3>Smart Playlists</h3>
+                    <p>Create and manage custom playlists with AI-powered recommendations based on your taste.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Advanced Search</h3>
+                    <p>Find any song, artist, or album instantly with powerful search and filters.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Equalizer</h3>
+                    <p>Customize your listening experience with built-in equalizer and audio effects.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Favorites & Likes</h3>
+                    <p>Save your favorite songs and albums for quick access anytime, anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section">
+        <div class="container">
+            <h2>Ready to Experience Tune?</h2>
+            <p>Download the app now and start enjoying your favorite music!</p>
+            <div class="download-buttons">
+                <a href="assets/apk/tune.apk" class="download-btn" download>
+                    <i class="fab fa-android"></i>
+                    Download APK
+                </a>
+                <a href="index.html#projects" class="download-btn back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fab fa-flutter"></i>
+                    <span>Maviya Shaik</span>
+                </div>
+                <p>&copy; 2025 Maviya Shaik - Flutter Developer Portfolio. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/shaikmaviya" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/maviya-shaik" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/ameer.muaviya.shaik/" target="_blank" aria-label="Instagram (Ameer Muaviya Shaik)"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:maviyashaik.dev@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.classList.add('active');
+            modalImg.src = imageSrc;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Looping auto-scroll for screenshots
+        (function initScreenshotsLoop(){
+            const grid = document.getElementById('screenshotsCarousel');
+            if(!grid) return;
+
+            // Respect user preference for reduced motion
+            const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Ensure we have enough content width to overflow on any screen
+            function ensureOverflow(maxCycles = 6){
+                let cycles = 0;
+                while (grid.scrollWidth <= grid.clientWidth * 2 && cycles < maxCycles) {
+                    const nodes = Array.from(grid.children);
+                    nodes.forEach(n => grid.appendChild(n.cloneNode(true)));
+                    cycles++;
+                }
+            }
+            ensureOverflow();
+
+            let paused = false;
+            let speed = 0.7; // pixels per frame
+            let userPauseTimer = null;
+
+            function step(){
+                if(!paused && !reduceMotion){
+                    // Guard: if no overflow, try to create it again
+                    if (grid.scrollWidth <= grid.clientWidth) {
+                        ensureOverflow();
+                    }
+
+                    grid.scrollLeft += speed;
+                    const half = grid.scrollWidth / 2; // because we cloned once per ensureOverflow cycle
+                    if(grid.scrollLeft >= half){
+                        grid.scrollLeft = grid.scrollLeft - half;
+                    }
+                }
+                requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+
+            // Pause on hover or focus within
+            grid.addEventListener('mouseenter', () => paused = true);
+            grid.addEventListener('mouseleave', () => paused = false);
+            grid.addEventListener('focusin', () => paused = true);
+            grid.addEventListener('focusout', () => paused = false);
+
+            // Pause briefly on user scroll interaction (mouse wheel / touch drag)
+            const pauseAfterInteraction = () => {
+                paused = true;
+                if (userPauseTimer) clearTimeout(userPauseTimer);
+                userPauseTimer = setTimeout(() => { paused = false; }, 1500);
+            };
+            grid.addEventListener('wheel', pauseAfterInteraction, { passive: true });
+            grid.addEventListener('touchstart', pauseAfterInteraction, { passive: true });
+            grid.addEventListener('pointerdown', pauseAfterInteraction);
+
+            // Pause when modal is open
+            const modal = document.getElementById('imageModal');
+            const observer = new MutationObserver(() => {
+                paused = modal.classList.contains('active');
+            });
+            observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+        })();
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
