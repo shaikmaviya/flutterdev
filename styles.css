@@ -1125,6 +1125,7 @@ svg defs {
 .about {
     background: var(--white);
     position: relative;
+    padding: 100px 0;
 }
 
 .about::before {
@@ -1170,7 +1171,7 @@ svg defs {
 }
 
 .profile-video:hover {
-    transform: translateY(-8px) scale(1.06);
+    transform: translateY(-10px) scale(1.05);
     box-shadow: 0 34px 90px rgba(37, 99, 235, 0.42);
     border-color: var(--primary-color);
 }
@@ -1228,7 +1229,7 @@ svg defs {
 }
 
 .about-text h3 {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
     background: var(--gradient);
     -webkit-background-clip: text;
@@ -1241,6 +1242,7 @@ svg defs {
     color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.8;
+    font-size: 1.1rem;
 }
 
 .about-stats {
