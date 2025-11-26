@@ -1158,8 +1158,8 @@ svg defs {
 }
 
 .profile-video {
-    width: 440px; /* slightly larger */
-    height: 440px; /* keep square ratio */
+    width: 380px; /* slightly larger */
+    height: 380px; /* keep square ratio */
     border-radius: 32px;
     object-fit: cover;
     box-shadow: 0 24px 70px rgba(37, 99, 235, 0.32);
