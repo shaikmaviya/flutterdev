@@ -108,9 +108,9 @@
             <div class="about-content">
                 <div class="about-image">
                     <!-- Add your profile video here -->
-                    <video id="profileVideo" class="profile-video" autoplay muted loop playsinline poster="assets/images/image.png">
+                    <video id="profileVideo" class="profile-video" autoplay muted loop playsinline controls
+                        poster="assets/images/image.png">
                         <source src="assets/videos/video.mp4" type="video/mp4">
-                        <source src="assets/videos/profile.webm" type="video/webm">
                         Your browser does not support the video tag.
                     </video>
                     <!-- Fallback image shown if video fails -->
@@ -856,17 +856,12 @@
             src.addEventListener('error', showFallback);
         });
         video.addEventListener('error', showFallback);
-        // Attempt playback (needed for some browsers); fallback if it fails
-        var playPromise = video.play();
-        if(playPromise && typeof playPromise.catch === 'function'){
-            playPromise.catch(showFallback);
-        }
-        // If metadata doesn't load within 5 seconds, fallback
+        // If metadata doesn't load within 8 seconds, fallback
         var timeout = setTimeout(function(){
-            if(video.readyState < 1){ // HAVE_METADATA
+            if(video.readyState < 2){ // HAVE_CURRENT_DATA
                 showFallback();
             }
-        }, 5000);
+        }, 8000);
         video.addEventListener('loadeddata', function(){ clearTimeout(timeout); });
     })();
     </script>
